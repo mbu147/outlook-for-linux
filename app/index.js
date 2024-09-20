@@ -45,7 +45,7 @@ if (isMac) {
 	requestMediaAccess();
 }
 
-const protocolClient = 'msteams';
+const protocolClient = 'msoutlook';
 if (!app.isDefaultProtocolClient(protocolClient, process.execPath)) {
 	app.setAsDefaultProtocolClient(protocolClient, process.execPath);
 }

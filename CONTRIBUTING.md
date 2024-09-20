@@ -66,13 +66,13 @@ To install the snap file using the generated file use this command.
 
 ```bash
 cd dist
-sudo snap install teams-for-linux_VERSION_amd64.snap --dangerous
+sudo snap install outlook-for-linux_VERSION_amd64.snap --dangerous
 ```
 
 #### Install using snap from store
 
 ```bash
-sudo snap install teams-for-linux
+sudo snap install outlook-for-linux
 ```
 
 ## Release process
@@ -89,4 +89,4 @@ The version increase follows the next rules:
 
 ### appdata.xml
 
-For each release, create a new section in the [com.github.IsmaelMartinez.teams_for_linux.appdata.xml](com.github.IsmaelMartinez.teams_for_linux.appdata.xml) file. This will automatically update the appstream data in the flathub repository.
+For each release, create a new section in the [com.github.IsmaelMartinez.outlook_for_linux.appdata.xml](com.github.IsmaelMartinez.outlook_for_linux.appdata.xml) file. This will automatically update the appstream data in the flathub repository.

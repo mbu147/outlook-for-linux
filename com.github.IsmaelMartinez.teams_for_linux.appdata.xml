@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-	<id>com.github.IsmaelMartinez.teams_for_linux</id>
+	<id>com.github.IsmaelMartinez.outlook_for_linux</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0</project_license>
-	<name>Portal for Teams</name>
-	<summary>Unofficial Microsoft Teams client for Linux</summary>
+	<name>Portal for Outlook</name>
+	<summary>Unofficial Microsoft Outlook client for Linux</summary>
 	<description>
-		<p>Experience seamless integration with the Microsoft Teams Web App in a standalone Electron application.</p>
-		<p>This application is an unofficial client for Microsoft Teams.</p>
+		<p>Experience seamless integration with the Microsoft Outlook Web App in a standalone Electron application.</p>
+		<p>This application is an unofficial client for Microsoft Outlook.</p>
 	</description>
-	<url type="homepage">https://github.com/IsmaelMartinez/teams-for-linux</url>
-	<url type="help">https://github.com/IsmaelMartinez/teams-for-linux/blob/develop/KNOWN_ISSUES.md</url>
-	<url type="bugtracker">https://github.com/IsmaelMartinez/teams-for-linux/issues</url>
-	<launchable type="desktop-id">com.github.IsmaelMartinez.teams_for_linux.desktop</launchable>
+	<url type="homepage">https://github.com/mbu147/outlook-for-linux</url>
+	<url type="help">https://github.com/mbu147/outlook-for-linux/blob/develop/KNOWN_ISSUES.md</url>
+	<url type="bugtracker">https://github.com/mbu147/outlook-for-linux/issues</url>
+	<launchable type="desktop-id">com.github.IsmaelMartinez.outlook_for_linux.desktop</launchable>
 	<releases>
 		<release version="1.10.2" date="2024-09-10">
 			<description>
@@ -45,7 +45,7 @@
 		<release version="1.9.5" date="2024-08-23">
 			<description>
 				<ul>
-					<li>Fix Incomplete regular expression for hostnames for github scanning in ms teams url</li>
+					<li>Fix Incomplete regular expression for hostnames for github scanning in ms outlook url</li>
 					<li>Printing the render-process-gone reason to help analyse #1369</li>
 				</ul>
 			</description>
@@ -54,14 +54,14 @@
 			<description>
 				<ul>
 					<li>Update the logger to be `electron-log` by default, and update the documentation, as the config options don't seem to overwrite the logger</li>
-					<li>Adding a new conditional for msteams meeting invites to handle the differences between v1 and v2</li>
+					<li>Adding a new conditional for msoutlook meeting invites to handle the differences between v1 and v2</li>
 				</ul>
 			</description>
 		</release>
 		<release version="1.9.3" date="2024-08-23">
 			<description>
 				<ul>
-					<li>Revert the default url to be teams v1, not v2.</li>
+					<li>Revert the default url to be outlook v1, not v2.</li>
 					<li>Update the logger to be `console` by default, as the documentation indicates</li>
 					<li>Update electron from  30.2.0 to 30.4.0</li>
 					<li>Update electron from  eslint and global libraries</li>
@@ -132,7 +132,7 @@
 		<release version="1.7.3" date="2024-06-18">
 			<description>
 				<ul>
-					<li>App renamed to Portal for Teams in flathub</li>
+					<li>App renamed to Portal for Outlook in flathub</li>
 				</ul>
 			</description>
 		</release>
@@ -194,7 +194,7 @@
 		<release version="1.5.1" date="2024-05-28">
 			<description>
 				<ul>
-					<li>Adding teams.live.com to the URLs evaluated across the app</li>
+					<li>Adding outlook.live.com to the URLs evaluated across the app</li>
 				</ul>
 			</description>
 		</release>
@@ -230,14 +230,14 @@
 		<release version="1.4.37" date="2024-05-04">
 			<description>
 				<ul>
-					<li>Fix awayOnSystemIdle flag in Teams V2</li>
+					<li>Fix awayOnSystemIdle flag in Outlook V2</li>
 				</ul>
 			</description>
 		</release>
 		<release version="1.4.36" date="2024-05-03">
 			<description>
 				<ul>
-					<li>Fix custom backgrounds in Teams V2</li>
+					<li>Fix custom backgrounds in Outlook V2</li>
 				</ul>
 			</description>
 		</release>
@@ -341,7 +341,7 @@
 			<description>
 				<ul>
 					<li>Electron version upgraded to 29.3.0</li>
-					<li>Fix: Teams doesn't remember the setting disable notification sound</li>
+					<li>Fix: Outlook doesn't remember the setting disable notification sound</li>
 				</ul>
 			</description>
 		</release>
@@ -365,7 +365,7 @@
 					<li>updating tray icon with the number in the document.title. This is hidden behind a feature flag/config option called useMutationTitleLogic</li>
 					<li>moved trayIconRenderer out of the activityHub, and to react to events instead.</li>
 					<li>re-order config readme to show in the right order.</li>
-					<li>removing the 'removal' of the opt in for teamsv2. Now if you use that feature flag and want to revert you will need to do it manually.</li>
+					<li>removing the 'removal' of the opt in for outlookv2. Now if you use that feature flag and want to revert you will need to do it manually.</li>
 				</ul>
 			</description>
 		</release>
@@ -373,14 +373,14 @@
 			<description>
 				<ul>
 					<li>adding how to debug in bug report, moving react logic into its own ha… by @IsmaelMartinez in #1176</li>
-					<li>Feature/teams v2 changes theme by @IsmaelMartinez in #1177</li>
+					<li>Feature/outlook v2 changes theme by @IsmaelMartinez in #1177</li>
 				</ul>
 			</description>
 		</release>
 		<release version="1.4.17" date="2024-03-31">
 			<description>
 				<ul>
-					<li>feat: add opt in handling for teams v2 by @mhenselin in #1160</li>
+					<li>feat: add opt in handling for outlook v2 by @mhenselin in #1160</li>
 				</ul>
 			</description>
 		</release>
@@ -390,7 +390,7 @@
 					<li>Removing the angular recurring call to disable some promotions as I s… by @IsmaelMartinez in #1152</li>
 					<li>Hotfix/remove recurring angular call by @IsmaelMartinez in #1153</li>
 					<li>Hotfix/remove recurring angular call by @IsmaelMartinez in #1154</li>
-					<li>add support for changing idle (away) state in Teams2 by @bastidest in #1157</li>
+					<li>add support for changing idle (away) state in Outlook2 by @bastidest in #1157</li>
 				</ul>
 			</description>
 		</release>
@@ -556,7 +556,7 @@
 		<release version="1.3.20" date="2023-11-14">
 			<description>
 				<ul>
-					<li>Fix: custom css compatibility with New Teams</li>
+					<li>Fix: custom css compatibility with New Outlook</li>
 				</ul>
 			</description>
 		</release>
@@ -795,7 +795,7 @@
 		<release version="1.0.92" date="2023-05-18">
 			<description>
 				<ul>
-					<li>Fix: External links are not opened correctly when they point to a Teams channel</li>
+					<li>Fix: External links are not opened correctly when they point to a Outlook channel</li>
 				</ul>
 			</description>
 		</release>
@@ -811,7 +811,7 @@
 				<ul>
 					<li>New: Now custom background images can be downloaded from a remote server</li>
 					<li>New: Command line parameter --customBGServiceIgnoreMSDefaults to ignore Microsoft provided images</li>
-					<li>New: Custom background service 'config.json' need not have prefix '/teams-for-linux/custom-bg/' for 'src' and 'thumb_src'</li>
+					<li>New: Custom background service 'config.json' need not have prefix '/outlook-for-linux/custom-bg/' for 'src' and 'thumb_src'</li>
 				</ul>
 			</description>
 		</release>
@@ -878,7 +878,7 @@
 		<release version="1.0.71" date="2023-04-23">
 			<description>
 				<ul>
-					<li>Fix: Teams gets unloaded after suspend</li>
+					<li>Fix: Outlook gets unloaded after suspend</li>
 				</ul>
 			</description>
 		</release>
@@ -900,7 +900,7 @@
 			<description>
 				<ul>
 					<li>New: Disable/Enable Notification Sound if not Available with --disableNotificationSoundIfNotAvailable flag</li>
-					<li>Fix: Teams gets unloaded after suspend</li>
+					<li>Fix: Outlook gets unloaded after suspend</li>
 					<li>Minor code optimization</li>
 				</ul>
 			</description>
@@ -1027,7 +1027,7 @@
 		<release version="1.0.42" date="2022-10-08">
 			<description>
 				<ul>
-					<li>Fix: The interstitial page of "Open Teams in Browser" / "Download Linux Client" / "Open in Teams App" opens when the app is started. By @breunigs</li>
+					<li>Fix: The interstitial page of "Open Outlook in Browser" / "Download Linux Client" / "Open in Outlook App" opens when the app is started. By @breunigs</li>
 				</ul>
 			</description>
 		</release>
@@ -1130,7 +1130,7 @@
 		<release version="1.0.27" date="2022-08-10">
 			<description>
 				<ul>
-					<li>Fixed: Cannot start teams-for-linux again after quit</li>
+					<li>Fixed: Cannot start outlook-for-linux again after quit</li>
 				</ul>
 			</description>
 		</release>
@@ -1311,7 +1311,7 @@
 					<li>Add flatpak to configuration directory list (#232) (afbb725) Thanks to @agates</li>
 					<li>Fix #208. Increasing the electron-builder (#231) (555e364)</li>
 					<li>Fix #221: updating readme with a link to AppImageLauncher (#226) (4fce0df) Thanks to @orange-buffalo</li>
-					<li>Fix #171. Can't open Microsoft Teams - blank screen (#218) (f0242d2) Thanks to @inglor and @basaas</li>
+					<li>Fix #171. Can't open Microsoft Outlook - blank screen (#218) (f0242d2) Thanks to @inglor and @basaas</li>
 					<li>Fix #204. Updating default user agent string (#217) (952c55a) Thanks to @whofferbert</li>
 					<li>Feature #185 Adding the ability to toogle fullscreen f11 (#216) (adeec1d) Thanks to @rt3norio</li>
 					<li>Update KNOWN_ISSUES to reference cache folder (#171) (#210) (36af526) Thanks to @skyghis</li>
@@ -1329,7 +1329,7 @@
 				<p>Using gitflow from now on for releases (having master and develop branches) (Thanks to @julian-alarcon)</p>
 				<p>#149 Re-implementing the spellchecker to improve performance. (PR #152, #155 and #163)</p>
 				<p>#123 Is now possible as the main issue was with the spellchecker (issue #149)</p>
-				<p>#41 Teams-for-linux now also available in Flatpak! (Thanks to @gabops)</p>
+				<p>#41 Outlook-for-linux now also available in Flatpak! (Thanks to @gabops)</p>
 				<p>#99 Fixing the cursor in snap (PR #168)</p>
 				<p>#61 Improving the screen-share quality by adding a white end to the browserviews. This is a chrome issue that basically doesn't trigger then the antialiasing. Strange but it works! (PR #165)</p>
 				<p>#89 Adding the basic part for the xdg-open. This might need a few improvements as it is currently quite difficult to test. (PR #170)</p>

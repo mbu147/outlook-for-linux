@@ -5,15 +5,15 @@ exports = module.exports = (app) => ({
 	submenu: [
 		{
 			label: 'Online Documentation',
-			click: () => shell.openExternal('https://support.office.com/en-us/teams'),
+			click: () => shell.openExternal('https://support.office.com/en-us/outlook'),
 		},
 		{
 			label: 'Github Project',
-			click: () => shell.openExternal('https://github.com/IsmaelMartinez/teams-for-linux'),
+			click: () => shell.openExternal('https://github.com/mbu147/outlook-for-linux'),
 		},
 		{
-			label: 'Microsoft Teams Support',
-			click:() => shell.openExternal('https://answers.microsoft.com/en-us/msteams/forum'),
+			label: 'Microsoft Outlook Support',
+			click:() => shell.openExternal('https://answers.microsoft.com/en-us/msoutlook/forum'),
 		},
 		{type: 'separator'},
 		{

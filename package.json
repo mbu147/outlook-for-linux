@@ -1,21 +1,21 @@
 {
-  "name": "teams-for-linux",
+  "name": "outlook-for-linux",
   "version": "1.10.2",
   "main": "app/index.js",
-  "description": "Unofficial client for Microsoft Teams for Linux",
-  "homepage": "https://github.com/IsmaelMartinez/teams-for-linux",
+  "description": "Unofficial client for Microsoft Outlook for Linux",
+  "homepage": "https://github.com/mbu147/outlook-for-linux",
   "keywords": [
-    "Teams",
-    "Microsoft Teams"
+    "Outlook",
+    "Microsoft Outlook"
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/IsmaelMartinez/teams-for-linux"
+    "url": "git+ssh://github.com/IsmaelMartinez/outlook-for-linux"
   },
   "author": {
     "name": "Ismael Martinez",
     "email": "ismaelmartinez@gmail.com",
-    "url": "https://github.com/IsmaelMartinez/"
+    "url": "https://github.com/mbu147/"
   },
   "license": "GPL-3.0-or-later",
   "scripts": {
@@ -61,14 +61,14 @@
     "globals": "^15.9.0"
   },
   "build": {
-    "appId": "teams-for-linux",
+    "appId": "outlook-for-linux",
     "asarUnpack": [
       "node_modules/spellchecker/vendor/hunspell_dictionaries"
     ],
     "protocols": {
-      "name": "msteams",
+      "name": "msoutlook",
       "schemes": [
-        "msteams"
+        "msoutlook"
       ]
     },
     "extraResources": [
@@ -80,13 +80,13 @@
     "linux": {
       "category": "Chat;Network;Office",
       "packageCategory": "net",
-      "executableName": "teams-for-linux",
-      "synopsis": "Teams for Linux",
-      "description": "Unofficial Microsoft Teams client for Linux using Electron. It uses the Web App and wraps it as a standalone application using Electron.",
+      "executableName": "outlook-for-linux",
+      "synopsis": "Outlook for Linux",
+      "description": "Unofficial Microsoft Outlook client for Linux using Electron. It uses the Web App and wraps it as a standalone application using Electron.",
       "desktop": {
-        "Name": "Teams for Linux",
-        "Comment": "Unofficial client for Microsoft Teams for Linux",
-        "StartupWMClass": "teams-for-linux"
+        "Name": "Outlook for Linux",
+        "Comment": "Unofficial client for Microsoft Outlook for Linux",
+        "StartupWMClass": "outlook-for-linux"
       },
       "target": [
         "rpm",
@@ -116,7 +116,7 @@
       ]
     },
     "snap": {
-      "summary": "Teams for Linux",
+      "summary": "Outlook for Linux",
       "confinement": "strict",
       "grade": "stable",
       "base": "core22",

@@ -16,20 +16,20 @@ The following is a list of locations depending on your type installation:
 
 | Type of install | Location | Clean-up command |
 |:-------------:|:-------------:|:-----:|
-| Vanilla install | `~/.config/teams-for-linux` | `rm -rf ~/.config/teams-for-linux` |
-| snap | `~/snap/teams-for-linux/current/.config/teams-for-linux/` |  `rm -rf ~/snap/teams-for-linux/current/.config/teams-for-linux/` |
-| --user installed flatpak | `~/.var/app/com.github.IsmaelMartinez.teams_for_linux/config/teams-for-linux` | `rm -rf ~/.var/app/com.github.IsmaelMartinez.teams_for_linux/config/teams-for-linux` |
+| Vanilla install | `~/.config/outlook-for-linux` | `rm -rf ~/.config/outlook-for-linux` |
+| snap | `~/snap/outlook-for-linux/current/.config/outlook-for-linux/` |  `rm -rf ~/snap/outlook-for-linux/current/.config/outlook-for-linux/` |
+| --user installed flatpak | `~/.var/app/com.github.IsmaelMartinez.outlook_for_linux/config/outlook-for-linux` | `rm -rf ~/.var/app/com.github.IsmaelMartinez.outlook_for_linux/config/outlook-for-linux` |
 | From source | `~/.config/Electron/` | `rm -rf ~/.config/Electron/` |
 
 ## Spellchecker not working
 
-Details are in issue [#28](https://github.com/IsmaelMartinez/teams-for-linux/issues/28)
+Details are in issue [#28](https://github.com/mbu147/outlook-for-linux/issues/28)
 
 In short, node_spellchecker only ships with en_US dictionary.
 
 As a work around, you can enable the use of local dictionaries by installing hunspell and your locale dictionary as indicates in this link [https://github.com/atom/spell-check#debian-ubuntu-and-mint](https://github.com/atom/spell-check#debian-ubuntu-and-mint)
 
-Also check [#154](https://github.com/IsmaelMartinez/teams-for-linux/issues/154) in case you have an issue with the detection of the locale.
+Also check [#154](https://github.com/mbu147/outlook-for-linux/issues/154) in case you have an issue with the detection of the locale.
 
 ## No desktop notifications
 
@@ -37,32 +37,32 @@ Some notifications daemons in linux don't support the implementation that Micros
 
 ## Blank page
 
-Some users have reported a blank page on login (with the title `Microsoft Teams - initializing`).
+Some users have reported a blank page on login (with the title `Microsoft Outlook - initializing`).
 
 The following workarounds tend to solve the issue:
 
-*    Right click on the Microsoft Teams icon tray and click on Refresh. (Ctrl+R)
+*    Right click on the Microsoft Outlook icon tray and click on Refresh. (Ctrl+R)
 
 If the above doesn't work:
 
 *    Close the application and delete the application cache folder
 
-  *    `.config/teams-for-linux/Partitions/teams-4-linux/Application Cache`
+  *    `.config/outlook-for-linux/Partitions/outlook-4-linux/Application Cache`
 
-  *    for Snap installation, `snap/teams-for-linux/current/.config/teams-for-linux/Partitions/teams-4-linux/Application Cache`.
+  *    for Snap installation, `snap/outlook-for-linux/current/.config/outlook-for-linux/Partitions/outlook-4-linux/Application Cache`.
 
-  *    for flatpak, `~/.var/app/com.github.IsmaelMartinez.teams_for_linux/config/teams-for-linux/Partitions/teams-4-linux/Application\ Cache/`
+  *    for flatpak, `~/.var/app/com.github.IsmaelMartinez.outlook_for_linux/config/outlook-for-linux/Partitions/outlook-4-linux/Application\ Cache/`
 
   >  Check the config locations to find other installations location
 
-Refer to [#171](https://github.com/IsmaelMartinez/teams-for-linux/issues/171) for more info
+Refer to [#171](https://github.com/mbu147/outlook-for-linux/issues/171) for more info
 
 If when you reload or close the application you get the blank page again, please repeat the second workaround.
 
 ## No Apple Silicon Mac build
 It appears that Apple Silicon can't run unsigned code, and the Apple Developer account that is required for signing
 costs $99/year. Thus, only Intel Mac release is pre-built in Github releases. This issue is tracked in
-[#1225](https://github.com/IsmaelMartinez/teams-for-linux/issues/1225).
+[#1225](https://github.com/mbu147/outlook-for-linux/issues/1225).
 
 The Intel build works on Apple Silicon Macs, but runs slow because it is emulated.
 

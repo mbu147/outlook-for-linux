@@ -1,9 +1,9 @@
 /*
-From https://userstyles.org/styles/164548/condensed-microsoft-teams-for-dark-theme
+From https://userstyles.org/styles/164548/condensed-microsoft-outlook-for-dark-theme
 */
 
 /*
- * microsoft_teams_condensed_dark.css
+ * microsoft_outlook_condensed_dark.css
  * Generated on 2018-10-21 22:49:20
  */
 
@@ -93,7 +93,7 @@ acc-message-list-focusable
     overflow:visible !important;
 }
 
-/* same for threads in teams chat */
+/* same for threads in outlook chat */
 .message-list-common:not(.chat-style) .conversation-reply .ts-message-thread-body.align-item-left
 {
     overflow:visible !important;
@@ -141,7 +141,7 @@ thread .ts-message .media-left {
    Search for NAME-WIDTH to customize it.
  */
 
-/** Teams threads **/
+/** Outlook threads **/
 
 /* Name of the poster shown on the left, in place of the avatar. */
 
@@ -244,7 +244,7 @@ message-list.chat-style .self .media-left ~ .ts-message-thread-body
     padding-top: 0.2rem !important;
   }
 
-/* Teams */
+/* Outlook */
   .message-list-common:not(.chat-style) thread .ts-message .conversation-common.conversation-start .message-body
   {
     padding-top: 0.3rem !important;
@@ -279,7 +279,7 @@ message-list.chat-style .self .media-left ~ .ts-message-thread-body
 
 /*** Name of the poster, timestamp: shown (above) on hover ***/
 
-/** Teams thread **/
+/** Outlook thread **/
 
 /* 1st thread message  */
   .message-list-common:not(.chat-style) .conversation-start .ts-message-thread-body:hover .message-body-top-row,

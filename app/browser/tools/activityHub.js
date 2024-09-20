@@ -38,17 +38,17 @@ class ActivityHub {
 	}
 
 	setMachineState(state) {
-		const teams2IdleTracker = ReactHandler.getTeams2IdleTracker();
-		if (teams2IdleTracker) {
+		const outlook2IdleTracker = ReactHandler.getOutlook2IdleTracker();
+		if (outlook2IdleTracker) {
 			try {
-				console.debug(`setMachineState teams2 state=${state}`);
+				console.debug(`setMachineState outlook2 state=${state}`);
 				if (state === 1) {
-					teams2IdleTracker.handleMonitoredWindowEvent();
+					outlook2IdleTracker.handleMonitoredWindowEvent();
 				} else {
-					teams2IdleTracker.transitionToIdle();
+					outlook2IdleTracker.transitionToIdle();
 				}
 			} catch (e) {
-				console.error('Failed to set teams2 Machine State', e);
+				console.error('Failed to set outlook2 Machine State', e);
 			}
 		} else {
 			instance.whenReady().then((inst) => {
@@ -64,17 +64,17 @@ class ActivityHub {
 	}
 
 	setUserStatus(status) {
-		const teams2IdleTracker = ReactHandler.getTeams2IdleTracker();
-		if (teams2IdleTracker) {
+		const outlook2IdleTracker = ReactHandler.getOutlook2IdleTracker();
+		if (outlook2IdleTracker) {
 			try {
-				console.debug(`setUserStatus teams2 status=${status}`);
+				console.debug(`setUserStatus outlook2 status=${status}`);
 				if (status === 1) {
-					teams2IdleTracker.handleMonitoredWindowEvent();
+					outlook2IdleTracker.handleMonitoredWindowEvent();
 				} else {
-					teams2IdleTracker.transitionToIdle();
+					outlook2IdleTracker.transitionToIdle();
 				}
 			} catch (e) {
-				console.error('Failed to set teams2 User Status', e);
+				console.error('Failed to set outlook2 User Status', e);
 			}
 		} else {
 			instance.whenReady().then((inst) => {
@@ -203,7 +203,7 @@ function getMeetingNotificationList(workerEvents, calendarEvents) {
 
 function addEligibleCalendarEvents(calendarEvents, meetingId, notificationList) {
 	for (const ce of calendarEvents) {
-		if (ce.skypeTeamsData && JSON.parse(ce.skypeTeamsData).cid === meetingId) {
+		if (ce.skypeOutlookData && JSON.parse(ce.skypeOutlookData).cid === meetingId) {
 			notificationList.push(ce);
 			break;
 		}
@@ -219,7 +219,7 @@ function assignActivitiesCountUpdateHandler(controller) {
 	controller.chatListService.safeSubscribe(
 		controller.$scope,
 		() => onActivitiesCountUpdated(controller),
-		window.teamspace.services.ChatListServiceEvents.EventType_UnreadCount);
+		window.outlookpace.services.ChatListServiceEvents.EventType_UnreadCount);
 	onActivitiesCountUpdated(controller);
 }
 
@@ -348,7 +348,7 @@ function callMeetingStartedEventHandlers(handlers, e) {
 async function onMyStatusChanged(controller, data) {
 	const handlers = getEventHandlers('my-status-changed');
 	for (const handler of handlers) {
-		handler.handler({ data: data, isInactive: window.teamspace.services.ApplicationState[controller.appStateService.current] === 'Inactive' || window.teamspace.services.ApplicationState[controller.appStateService.current] === 'LongInactive' });
+		handler.handler({ data: data, isInactive: window.outlookpace.services.ApplicationState[controller.appStateService.current] === 'Inactive' || window.outlookpace.services.ApplicationState[controller.appStateService.current] === 'LongInactive' });
 	}
 }
 

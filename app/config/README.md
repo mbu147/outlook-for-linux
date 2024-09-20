@@ -3,7 +3,7 @@
 This folder contains the configuration options available for the app. You can see this options by running the app with the `--help` flag.
 
 ```bash
-teams-for-linux --help
+outlook-for-linux --help
 ```
 
 ## Available starting arguments
@@ -15,12 +15,12 @@ Here is the list of available arguments and its usage:
 | Option                          | Usage                                                                                      | Default Value         |
 |---------------------------------|--------------------------------------------------------------------------------------------|-----------------------|
 | appActiveCheckInterval          | A numeric value in seconds as poll interval to check if the system is active from being idle | 2                     |
-| appIcon                         | Teams app icon to show in the tray                                                       |                       |
+| appIcon                         | Outlook app icon to show in the tray                                                       |                       |
 | appIconType                     | Type of tray icon to be used default/light/dark                                           | *default*, light, dark              |
 | appIdleTimeout                  | A numeric value in seconds as duration before app considers the system as idle             | 300                   |
 | appIdleTimeoutCheckInterval     | A numeric value in seconds as poll interval to check if the appIdleTimeout is reached      | 10                    |
 | appLogLevels                    | Comma separated list of log levels (error,warn,info,debug)                                | error,warn            |
-| appTitle                        | A text to be suffixed with page title                                                    | Microsoft Teams       |
+| appTitle                        | A text to be suffixed with page title                                                    | Microsoft Outlook       |
 | authServerWhitelist             | Set auth-server-whitelist value (string)                                                           | *                |
 | awayOnSystemIdle                | Boolean to set the user status as away when system goes idle                                        | false               |
 | chromeUserAgent                 | Google Chrome User Agent                                                                 | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${process.versions.chrome} Safari/537.36                |
@@ -54,14 +54,14 @@ Here is the list of available arguments and its usage:
 | incomingCallCommandArgs         | Arguments for the incomming call command.                                                 |       []                |
 | isCustomBackgroundEnabled	   | A boolean flag to enable/disable custom background images                       | false              |
 | logConfig                       | A string value to set the log manager to use (`Falsy`, `console`, or a valid electron-log configuration)                | *{}* (electron-log)        |
-| meetupJoinRegEx |  Meetup-join and channel regular expession | /^https:\/\/teams\.(microsoft|live)\.com\/.*(?:meetup-join|channel)/g |
+| meetupJoinRegEx |  Meetup-join and channel regular expession | /^https:\/\/outlook\.(microsoft|live)\.com\/.*(?:meetup-join|channel)/g |
 | menubar                         | A value controls the menu bar behaviour                                                   | *auto*, visible, hidden               |
 | minimized                       | Boolean to start the application minimized                                                          | false               |
 | notificationMethod | Notification method to be used by the application (`web`/`electron`) | *web*, electron |
 | ntlmV2enabled                   | Set enable-ntlm-v2 value                                                                 | 'true'                |
 | onlineCheckMethod               | Type of network test for checking online status.                                          | *https*, dns, native, none                |
-| optInTeamsV2                    | Boolean to opt in to use Teams V2                                                                   | false               |
-| partition                       | BrowserWindow webpreferences partition                                                    | persist:teams-4-linux                |
+| optInOutlookV2                    | Boolean to opt in to use Outlook V2                                                                   | false               |
+| partition                       | BrowserWindow webpreferences partition                                                    | persist:outlook-4-linux                |
 | proxyServer                     | Proxy Server with format address:port (string)                                                  | null                |
 | sandbox				  | Sandbox for the renderer process  (disabling this will break functionality)                                                | false               |
 | screenLockInhibitionMethod      | Screen lock inhibition method to be used (`Electron`/`WakeLockSentinel`)                      | *Electron*, WakeLockSentinel                |
@@ -71,7 +71,7 @@ Here is the list of available arguments and its usage:
 | ssoInTuneEnabled                | Enable InTune Single-Sign-On                                                             | false
 | ssoInTuneAuthUser               | User (e-mail) to be used for InTune SSO login.                                           |                  |
 | trayIconEnabled				 | Enable tray icon                                                                          | true               |
-| url                             | Microsoft Teams URL (string)                                                                    | https://teams.microsoft.com/                |
+| url                             | Microsoft Outlook URL (string)                                                                    | https://outlook.microsoft.com/                |
 | useMutationTitleLogic         | Use MutationObserver to update counter from title                                          | true               |
 | version                         | Show the version number                                                                  | false                 |
 | watchConfigFile | Watch for changes in the config file and restarts the app | false |
@@ -81,11 +81,11 @@ Here is the list of available arguments and its usage:
 As an example, to disable the persistence, you can run the following command:
 
 ```bash
-teams-for-linux --partition nopersist
+outlook-for-linux --partition nopersist
 ```
 
-Alternatively, you can use a file called `config.json` with the configuration options. This file needs to be located in `~/.config/teams-for-linux/config.json`.
-For Snap installations, the file is located in `~/snap/teams-for-linux/current/.config/teams-for-linux/config.json` and for Flatpak it is located in `~/.var/app/com.github.IsmaelMartinez.teams_for_linux/config/teams-for-linux/config.json`.
+Alternatively, you can use a file called `config.json` with the configuration options. This file needs to be located in `~/.config/outlook-for-linux/config.json`.
+For Snap installations, the file is located in `~/snap/outlook-for-linux/current/.config/outlook-for-linux/config.json` and for Flatpak it is located in `~/.var/app/com.github.IsmaelMartinez.outlook_for_linux/config/outlook-for-linux/config.json`.
 
 [yargs](https://www.npmjs.com/package/yargs) allows for extra modes of configuration. Refer to their documentation if you prefer to use a configuration file instead of arguments.
 
@@ -130,7 +130,7 @@ You can find an example of this feature in the [../customBackground/example/READ
 2. 3 new command-line parameters `customBGServiceBaseUrl`, `customBGServiceIgnoreMSDefaults` and `customBGServiceConfigFetchInterval` are introduced. See above for details.
 3. Custom images are always loaded with `<customBGServiceBaseUrl>/<image-path>`. So, you have to make sure the web server is running and `<customBGServiceBaseUrl>` responds to the request.
 4. You can choose any web server of your choice but make sure `Access-Control-Allow-Origin` is set to `*` in response headers from web server.
-5. In Teams version 2, this will replace Microsoft's default images.
+5. In Outlook version 2, this will replace Microsoft's default images.
 6. To use you must activate the flag `--isCustomBackgroundEnabled=true`. From version 1.4.36 this flag is change default to `false`.
 
 For apache2, `/etc/apache2/apache2.conf` may need to have an entry like this.
@@ -146,7 +146,7 @@ For apache2, `/etc/apache2/apache2.conf` may need to have an entry like this.
 ### Configuring list of images
 
 1. List of images are to be stored in `<customBGServiceBaseUrl>/config.json`.
-2. In Teams V1, it would look like this:
+2. In Outlook V1, it would look like this:
 ```json
 [
 	{
@@ -158,7 +158,7 @@ For apache2, `/etc/apache2/apache2.conf` may need to have an entry like this.
 	}
 ]
 ```
-3. In Teams V2, it would look like this:
+3. In Outlook V2, it would look like this:
 ```json
 {
 	"videoBackgroundImages": [
@@ -183,7 +183,7 @@ As you can see from the above example, it's a JSON array so you can configure an
 - `src`: Path to the image to be loaded when selected from the preview. Provide a picture with resolution 1920x1080 (Based on Microsoft CDN) though any resolution would work. This is to avoid unnecessary traffic by loading large size images.
 - `thumb_src`: Path to the image to be shown on the preview screen. Provide a low resolution picture (280x158 based on Microsoft CDN) as it's shown on the preview page. The smaller the image the quicker the preview will be.
 
-Image paths are relative to `customBGServiceBaseUrl`. If your customBGServiceBaseUrl is `https://example.com` and your image is at `https://example.com/images/sample.jpg`, then `src` would be `/images/sample.jpg` and in Teams V2 `src` would be `/evergreen-assets/backgroundimages/images/sample.jpg`.
+Image paths are relative to `customBGServiceBaseUrl`. If your customBGServiceBaseUrl is `https://example.com` and your image is at `https://example.com/images/sample.jpg`, then `src` would be `/images/sample.jpg` and in Outlook V2 `src` would be `/evergreen-assets/backgroundimages/images/sample.jpg`.
 
 ## LogConfig option.
 

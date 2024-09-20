@@ -6,10 +6,10 @@ class ThemeManager {
 		this.ipcRenderer = ipcRenderer;
 		this.config = config;
 
-		const clientPreferences = ReactHandler.getTeams2ClientPreferences();
+		const clientPreferences = ReactHandler.getOutlook2ClientPreferences();
 		if (clientPreferences) {
 			console.debug('Using react to set the follow system theme');
-			ReactHandler.getTeams2ClientPreferences().theme.followOsTheme = config.followSystemTheme;
+			ReactHandler.getOutlook2ClientPreferences().theme.followOsTheme = config.followSystemTheme;
 		}
 
 		if (config.followSystemTheme) {
@@ -20,7 +20,7 @@ class ThemeManager {
 
 	async applyTheme (_event, ...args) {
 		const theme = args[0] ? 'dark' : 'default';
-		const clientPreferences = ReactHandler.getTeams2ClientPreferences();
+		const clientPreferences = ReactHandler.getOutlook2ClientPreferences();
 		if (clientPreferences) {
 			console.debug('Using react to set the theme');
 			clientPreferences.theme.userTheme = theme;

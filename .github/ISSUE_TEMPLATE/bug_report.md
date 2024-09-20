@@ -34,7 +34,7 @@ When possible, please run the application from the terminal using `--webDebug` a
 The provide in this section the output from both the terminal and the browser debug console.
 
 ```bash
-teams-for-linux --webDebug --logConfig='{}'
+outlook-for-linux --webDebug --logConfig='{}'
 ```
 
 *IMPORTANT:* Ensure that you mask any sensitive information before posting the output.

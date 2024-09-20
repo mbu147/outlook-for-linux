@@ -49,16 +49,16 @@ class CustomBackground {
     }
 
     beforeRequestHandlerRedirectUrl(details) {
-        // Custom background for teams v1
-        if (details.url.startsWith('https://statics.teams.cdn.office.net/teams-for-linux/custom-bg/')) {
-            const reqUrl = details.url.replace('https://statics.teams.cdn.office.net/teams-for-linux/custom-bg/', '');
+        // Custom background for outlook v1
+        if (details.url.startsWith('https://statics.outlook.cdn.office.net/outlook-for-linux/custom-bg/')) {
+            const reqUrl = details.url.replace('https://statics.outlook.cdn.office.net/outlook-for-linux/custom-bg/', '');
             const imgUrl = httpHelper.joinURLs(customBGServiceUrl.href, reqUrl);
             console.debug(`Forwarding '${details.url}' to '${imgUrl}'`);
             return { redirectURL: imgUrl };
         }
-        // Custom background replace for teams v2
-        else if (details.url.startsWith('https://statics.teams.cdn.office.net/evergreen-assets/backgroundimages/') && this.config.isCustomBackgroundEnabled) {
-            const reqUrl = details.url.replace('https://statics.teams.cdn.office.net/evergreen-assets/backgroundimages/', '');
+        // Custom background replace for outlook v2
+        else if (details.url.startsWith('https://statics.outlook.cdn.office.net/evergreen-assets/backgroundimages/') && this.config.isCustomBackgroundEnabled) {
+            const reqUrl = details.url.replace('https://statics.outlook.cdn.office.net/evergreen-assets/backgroundimages/', '');
             const imgUrl = httpHelper.joinURLs(customBGServiceUrl.href, reqUrl);
             console.debug(`Forwarding '${details.url}' to '${imgUrl}'`);
             return { redirectURL: imgUrl };
@@ -130,12 +130,12 @@ class CustomBackground {
 }
 
 function setPath(cfg) {
-    if (!cfg.src.startsWith('/teams-for-linux/custom-bg/')) {
-        cfg.src = httpHelper.joinURLs('/teams-for-linux/custom-bg/', cfg.src);
+    if (!cfg.src.startsWith('/outlook-for-linux/custom-bg/')) {
+        cfg.src = httpHelper.joinURLs('/outlook-for-linux/custom-bg/', cfg.src);
     }
 
-    if (!cfg.thumb_src.startsWith('/teams-for-linux/custom-bg/')) {
-        cfg.thumb_src = httpHelper.joinURLs('/teams-for-linux/custom-bg/', cfg.thumb_src);
+    if (!cfg.thumb_src.startsWith('/outlook-for-linux/custom-bg/')) {
+        cfg.thumb_src = httpHelper.joinURLs('/outlook-for-linux/custom-bg/', cfg.thumb_src);
     }
 }
 

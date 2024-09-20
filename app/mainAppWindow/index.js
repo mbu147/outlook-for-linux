@@ -96,7 +96,7 @@ function applyAppConfiguration(config, window) {
 		});
 	}
 
-	handleTeamsV2OptIn(config);
+	handleOutlookV2OptIn(config);
 
 	window.webContents.setUserAgent(config.chromeUserAgent);
 
@@ -111,9 +111,9 @@ function applyAppConfiguration(config, window) {
 	}
 }
 
-function handleTeamsV2OptIn(config) {
-	if (config.optInTeamsV2) {
-		setConfigUrlTeamsV2(config);
+function handleOutlookV2OptIn(config) {
+	if (config.optInOutlookV2) {
+		setConfigUrlOutlookV2(config);
 		window.webContents.executeJavaScript('localStorage.getItem("tmp.isOptedIntoT2Web");', true)
 			.then(result => {
 				if ((result == null) || !result) {
@@ -130,7 +130,7 @@ function handleTeamsV2OptIn(config) {
 	}
 }
 
-function setConfigUrlTeamsV2(config) {
+function setConfigUrlOutlookV2(config) {
 	if(!config.url.includes('/v2')) {
 		config.url = config.url+'/v2/';
 	}
@@ -177,7 +177,7 @@ function onDidFrameFinishLoad(event, isMainFrame, frameProcessId, frameRoutingId
 	console.debug('did-frame-finish-load', event, isMainFrame);
 
 	if (isMainFrame) {
-		return; // We want to insert CSS only into the Teams V2 content iframe
+		return; // We want to insert CSS only into the Outlook V2 content iframe
 	}
 
 	const wf = webFrameMain.fromId(frameProcessId, frameRoutingId);
@@ -199,8 +199,8 @@ function restoreWindow() {
 }
 
 function processArgs(args) {
-	const v1msTeams = /^msteams:\/l\/(?:meetup-join|channel)/g;
-	const v2msTeams = /^msteams:\/\/teams\.microsoft\.com\/l\/(?:meetup-join|channel)/g;
+	const v1msOutlook = /^msoutlook:\/l\/(?:meetup-join|channel)/g;
+	const v2msOutlook = /^msoutlook:\/\/outlook\.microsoft\.com\/l\/(?:meetup-join|channel)/g;
 	console.debug('processArgs:', args);
 	for (const arg of args) {
 		console.debug(`testing RegExp processArgs ${new RegExp(config.meetupJoinRegEx).test(arg)}`);
@@ -209,15 +209,15 @@ function processArgs(args) {
 			window.show();
 			return arg;
 		} 
-		if (v1msTeams.test(arg)) {
-			console.debug('A url argument received with msteams v1 protocol');
+		if (v1msOutlook.test(arg)) {
+			console.debug('A url argument received with msoutlook v1 protocol');
 			window.show();
 			return config.url + arg.substring(8, arg.length);
 		} 
-		if (v2msTeams.test(arg)) {
-			console.debug('A url argument received with msteams v2 protocol');
+		if (v2msOutlook.test(arg)) {
+			console.debug('A url argument received with msoutlook v2 protocol');
 			window.show();
-			return arg.replace('msteams', 'https');
+			return arg.replace('msoutlook', 'https');
 		}
 	}
 }
@@ -279,14 +279,14 @@ function onNewWindow(details) {
 
 async function writeUrlBlockLog(url) {
 	const curBlockTime = new Date();
-	const logfile = path.join(appConfig.configPath, 'teams-for-linux-blocked.log');
+	const logfile = path.join(appConfig.configPath, 'outlook-for-linux-blocked.log');
 	const lstream = fs.createWriteStream(logfile, { flags: 'a' }).on('error', onLogStreamError);
 	lstream.write(`[${new Date().toLocaleString()}]: Blocked '${url}'\n`, onLogStreamError);
 	lstream.end();
 	const notifDuration = lastNotifyTime == null ? 60 : (curBlockTime.getTime() - lastNotifyTime.getTime()) / 1000;
 	if (notifDuration >= 60) {
 		new Notification({
-			title: 'Teams for Linux',
+			title: 'Outlook for Linux',
 			body: 'One or more web requests have been blocked. Please check the log for more details.'
 		}).show();
 		lastNotifyTime = curBlockTime;

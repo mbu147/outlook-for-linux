@@ -34,7 +34,7 @@ function applyCustomCSSToContent(content, cssLocation) {
 	});
 }
 
-// Teams V2 use iframe for the main view. The content.insertCSS
+// Outlook V2 use iframe for the main view. The content.insertCSS
 // does not work for that for some reason, so here, we listen for
 // on-did-frame-finish-load events, and inject additional <style>
 // element into them using JavaScript.

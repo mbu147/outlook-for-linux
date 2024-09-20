@@ -1,20 +1,20 @@
 class ReactHandler {
-    getTeams2IdleTracker() {
-        const teams2CoreServices = this._getTeams2CoreServices();
-        return teams2CoreServices?.clientState?._idleTracker;
+    getOutlook2IdleTracker() {
+        const outlook2CoreServices = this._getOutlook2CoreServices();
+        return outlook2CoreServices?.clientState?._idleTracker;
     }
 
-    getTeams2ClientPreferences() {
-        const teams2CoreServices = this._getTeams2CoreServices();
-        return teams2CoreServices?.clientPreferences?.clientPreferences;
+    getOutlook2ClientPreferences() {
+        const outlook2CoreServices = this._getOutlook2CoreServices();
+        return outlook2CoreServices?.clientPreferences?.clientPreferences;
     }
 
-    _getTeams2ReactElement() {
+    _getOutlook2ReactElement() {
         return document.getElementById('app');
     }
 
-    _getTeams2CoreServices() {
-        const reactElement = this._getTeams2ReactElement();
+    _getOutlook2CoreServices() {
+        const reactElement = this._getOutlook2ReactElement();
         const internalRoot = reactElement?._reactRootContainer?._internalRoot || reactElement?._reactRootContainer;
         return internalRoot?.current?.updateQueue?.baseState?.element?.props?.coreServices;
     }
