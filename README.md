@@ -1,4 +1,4 @@
-# outlook-for-linux
+# outlook-for-linux -> WIP
 
 This is an unofficial Microsoft Outlook client.
 
@@ -8,20 +8,20 @@ PRs and suggestions are welcomed. We will continue to support the community.
 
 ---
 
-[//]: # ([![Gitter chat]&#40;https://badges.gitter.im/ismaelmartinez/outlook-for-linux.png&#41;]&#40;https://gitter.im/outlook-for-linux/community "Gitter chat"&#41;)
-![](https://img.shields.io/github/release/mahmoudbahaa/outlook-for-linux.svg?style=flat)
-![](https://img.shields.io/github/downloads/mahmoudbahaa/outlook-for-linux/total.svg?style=flat)
+[//]: # ([![Gitter chat]&#40;https://badges.gitter.im/mbu147/outlook-for-linux.png&#41;]&#40;https://gitter.im/outlook-for-linux/community "Gitter chat"&#41;)
+![](https://img.shields.io/github/release/mbu147/outlook-for-linux.svg?style=flat)
+![](https://img.shields.io/github/downloads/mbu147/outlook-for-linux/total.svg?style=flat)
 ![Build & Release](https://github.com/mbu147/outlook-for-linux/workflows/Build%20&%20Release/badge.svg)
 
-[//]: # (![]&#40;https://img.shields.io/librariesio/github/mahmoudbahaa/outlook-for-linux&#41;)
-[![Known Vulnerabilities](https://snyk.io//test/github/mahmoudbahaa/outlook-for-linux/badge.svg?targetFile=package.json)](https://snyk.io//test/github/mahmoudbahaa/outlook-for-linux?targetFile=package.json)
+[//]: # (![]&#40;https://img.shields.io/librariesio/github/mbu147/outlook-for-linux&#41;)
+[![Known Vulnerabilities](https://snyk.io//test/github/mbu147/outlook-for-linux/badge.svg?targetFile=package.json)](https://snyk.io//test/github/mbu147/outlook-for-linux?targetFile=package.json)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/826059bbf59d45148c46e440579fc221)](https://app.codacy.com/gh/mahmoudbahaa/outlook-for-linux/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![outlook-for-linux](https://snapcraft.io/outlook-for-linux/badge.svg)](https://snapcraft.io/outlook-for-linux)
 
 Unofficial Microsoft Outlook client for Linux using [`Electron`](https://electronjs.org/).
 It uses the Web App and wraps it as a standalone application using Electron.
 
-A clone of https://github.com/mbu147/teams-for-linux but for outlook
+A clone of https://github.com/IsmaelMartinez/teams-for-linux but for outlook
 
 ## Downloads
 
