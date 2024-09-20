@@ -328,7 +328,7 @@ function extractYargConfig(configObject, appVersion) {
 				type: 'boolean'
 			},
 			url: {
-				default: 'https://outlook.microsoft.com',
+				default: 'https://outlook.office.com/',
 				describe: 'Microsoft Outlook URL',
 				type: 'string'
 			},

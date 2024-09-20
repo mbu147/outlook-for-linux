@@ -71,7 +71,7 @@ Here is the list of available arguments and its usage:
 | ssoInTuneEnabled                | Enable InTune Single-Sign-On                                                             | false
 | ssoInTuneAuthUser               | User (e-mail) to be used for InTune SSO login.                                           |                  |
 | trayIconEnabled				 | Enable tray icon                                                                          | true               |
-| url                             | Microsoft Outlook URL (string)                                                                    | https://outlook.microsoft.com/                |
+| url                             | Microsoft Outlook URL (string)                                                                    | https://outlook.office.com/                |
 | useMutationTitleLogic         | Use MutationObserver to update counter from title                                          | true               |
 | version                         | Show the version number                                                                  | false                 |
 | watchConfigFile | Watch for changes in the config file and restarts the app | false |
